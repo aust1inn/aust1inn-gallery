@@ -4,4 +4,4 @@ from .models import Image, Location
 def index(request):
     images = Image.objects.all()
     locations = Location.get_locations()
-    return render(request, 'pictures/index.html', {'images': images[::-1], 'locations': locations})
+    return render(request, 'photos/index.html', {'images': images[::-1], 'locations': locations})
