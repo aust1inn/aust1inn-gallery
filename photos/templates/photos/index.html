@@ -2,18 +2,18 @@
 
  {% block content %}
 
- <div class="container">
+ <div class="container d-flex">
     {% for image in images %}
 
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="{{image.image.url}}" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title">{{image.name}}</h5>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
+    {% endfor %}
+  
  </div>
- {% endfor %}
 
  {% endblock %}
