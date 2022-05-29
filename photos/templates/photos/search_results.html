@@ -3,21 +3,27 @@
 <div class="container">
 
     {% if images %}
-    <h2 class="text-center" id="found">Found {{ images|length }} images in '{{message}}' category</h2>
+    <h2 class="text-center" >Found {{ images|length }} images in '{{message}}' category</h2>
     {% else %}
-    <h2 class="text-center" id="foundnon"> Found 0 images for your search {{message}}</h2>
+    <h2 class="text-center" > Found 0 images for your search {{message}}</h2>
 
     <a class="d-block mx-auto" href="/">
         <button class="btn btn-sm btn-info d-block mx-auto">Back Home</button>
     </a>
     {% endif %}
     {% if images %}
-    <div class="card-columns">
+    <div class="">
         {% for image in images %}
-        <div class="card"  data-toggle="modal" data-target="#{{image.id}}">
-            <img src="{{image.image.url}}" height="100px" width="100px" alt="{{image.name}}" class="">
-        </div>
-        <div class="modal fade " id="{{image.id}}" tabindex="-1" role="dialog"
+        <div class="card mb-4 mt-3 album shadow-sm  ">
+            <div class="card-header">{{image.name}}</div>
+            <div class="card-body">                    
+              <img class="card-img-top"src = "{{ image.image.url }}" data-toggle="modal" data-target="#myModal{{image.id}}" style="height:150px; width: 200px;"/>
+    
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#myModal{{image.id}}">View</button>
+              </div>        </div>
+          </div>
+        <div class="modal fade " id="myModal{{image.id}}" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content modalcard">
@@ -30,7 +36,6 @@
                     <div class="modal-body">
                         <img src="{{image.image.url}}" alt="{{image.name}}" class="img-fluid">
                         <p>{{image.description}}</p>
-                        <span class="btn btn-sm btn-outline-success">{{image.category | title}}</span> <a href="/location/{{image.location}}" class="btn btn-sm btn-outline-info">{{image.location}}</a>
                     </div>
                     <div class="modal-footer">
                         <input class="form-control input-lg" type="text"
@@ -47,5 +52,30 @@
         {% endfor %}
     </div>
     {% endif %}
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 {% endblock %}

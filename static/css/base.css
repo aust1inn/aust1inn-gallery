@@ -4,6 +4,10 @@ body{
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+.navbar{
+    background-color: crimson;
+}
+
 .album{
     margin-left: 50px;
 }
