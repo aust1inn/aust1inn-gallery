@@ -1,11 +1,11 @@
 {%extends 'photos/base.html'%}
 
  {% block content %}
+  <div class="container-fluid myc  ">
 
- <div class="container p-3 d-flex">
     {% for image in images %}
 
-    <div class="card mb-4 mt-3  shadow-sm" style="width:20rem;height:18rem;">
+    <div class="card mb-4 mt-3 album shadow-sm d-flex ">
         <div class="card-header">{{image.name}}</div>
         <div class="card-body">                    
           <img class="card-img-top"src = "{{ image.image.url }}" data-toggle="modal" data-target="#myModal{{image.id}}" style="height:150px;"/>
@@ -38,9 +38,8 @@
           </div>
         </div>
       </div>
-      
+
     {% endfor %}
   
- </div>
-
+  </div>
  {% endblock %}

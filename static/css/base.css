@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&family=Source+Sans+Pro:wght@200&display=swap');
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.album{
+    margin-left: 50px;
+}
+
+.myc {
+    display: flex;
+    flex-wrap: wrap;
+}
