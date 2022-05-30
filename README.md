@@ -10,7 +10,7 @@ Aust1inn Gallery is a photo gallery web application to showcase beautiful pictur
 - Admin can upload images from a django dashboard
 
 ## View Live Site here
-View the complete site [here]('https://aust1inn-gallery.herokuapp.com/')
+View the complete site [here](https://aust1inn-gallery.herokuapp.com/)
 
 
 ## Technologies Used
